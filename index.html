@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon y sus Animales Similares</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Righteous&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Añadir más Pokémon flotantes -->
+    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" alt="" class="floating-pokemon horizontal" id="pokemon1" width="100">
+    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png" alt="" class="floating-pokemon diagonal" id="pokemon2" width="100">
+    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png" alt="" class="floating-pokemon horizontal" id="pokemon3" width="100">
+    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" alt="" class="floating-pokemon diagonal" id="pokemon4" width="100">
+    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/143.png" alt="" class="floating-pokemon horizontal" id="pokemon5" width="100">
+    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/039.png" alt="" class="floating-pokemon diagonal" id="pokemon6" width="100">
+    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/094.png" alt="" class="floating-pokemon fade" id="pokemon7" width="100">
+    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/130.png" alt="" class="floating-pokemon wave" id="pokemon8" width="100">
+
+    <div class="container">
+        <h1>Pokémon y sus Similitudes con Animales</h1>
+        
+        <div class="pokemon-container">
+            <div class="card card-pikachu" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" alt="Pikachu">
+                        <div class="info-card">
+                            <h2>Pikachu</h2>
+                            <p class="card-description">Pokémon tipo eléctrico conocido por sus mejillas rojas y su capacidad para almacenar electricidad. Es muy popular como mascota.</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <img src="https://s1.elespanol.com/2017/08/30/ciencia/medio-ambiente/cambio_climatico-ola_de_calor-calor_242987491_44739018_1706x1280.jpg" alt="Pika">
+                        <div class="info-card">
+                            <h2>Pika (Roedor)</h2>
+                            <p class="card-description">El Pika es un pequeño mamífero que vive en regiones montañosas. Al igual que Pikachu, tiene un aspecto adorable y mejillas redondas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card card-charizard" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png" alt="Charizard">
+                        <div class="info-card">
+                            <h2>Charizard</h2>
+                            <p class="card-description">Pokémon tipo fuego/volador conocido por su feroz apariencia y su poderosa llama. Es la evolución final de Charmander.</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <img src="https://www.bioparcfuengirola.es/wp-content/uploads/2024/04/DRAGON-KOMODOKOMODO_7.jpg" alt="Dragón de Komodo">
+                        <div class="info-card">
+                            <h2>Dragón de Komodo</h2>
+                            <p class="card-description">El dragón más grande del mundo, con una apariencia similar a Charizard. Comparte características como su naturaleza depredadora y su aspecto imponente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta de Blastoise -->
+            <div class="card card-blastoise" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/009.png" alt="Blastoise">
+                        <div class="info-card">
+                            <h2>Blastoise</h2>
+                            <p class="card-description">Pokémon tipo agua, conocido por los poderosos cañones de agua en su caparazón. Es la evolución final de Squirtle.</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Tortuga_carey_CR.jpg" alt="Tortuga Marina">
+                        <div class="info-card">
+                            <h2>Tortuga Marina</h2>
+                            <p class="card-description">Al igual que Blastoise, las tortugas marinas son excelentes nadadores y poseen un resistente caparazón que les sirve como protección.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta de Bulbasaur -->
+            <div class="card card-bulbasaur" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" alt="Bulbasaur">
+                        <div class="info-card">
+                            <h2>Bulbasaur</h2>
+                            <p class="card-description">Pokémon tipo planta/veneno que lleva una semilla en su espalda desde el día que nace. La semilla crece junto con él.</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Dicerorhinus_sumatrensis_2.jpg/1200px-Dicerorhinus_sumatrensis_2.jpg" alt="Rinoceronte">
+                        <div class="info-card">
+                            <h2>Rinoceronte con Musgo</h2>
+                            <p class="card-description">En la naturaleza, algunos rinocerontes desarrollan una capa de musgo en su piel, similar a la simbiosis planta-animal que representa Bulbasaur.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta de Gengar -->
+            <div class="card card-gengar" onclick="flipCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/094.png" alt="Gengar">
+                        <div class="info-card">
+                            <h2>Gengar</h2>
+                            <p class="card-description">Pokémon tipo fantasma/veneno, conocido por su naturaleza traviesa y su habilidad para esconderse en las sombras.</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Blanket_octopus.jpg/1200px-Blanket_octopus.jpg" alt="Pulpo Manta">
+                        <div class="info-card">
+                            <h2>Pulpo Manta</h2>
+                            <p class="card-description">Como Gengar, el pulpo manta es una criatura nocturna que puede cambiar su forma y color, además de moverse de manera fantasmal en el agua.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+``` 
