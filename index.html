@@ -8,8 +8,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+    <!-- Añadir estos elementos al inicio del body -->
+    <div class="page-border border-left"></div>
+    <div class="page-border border-right"></div>
+    
+    <div class="pokeball-decoration pokeball-1">
+        <div class="pokeball-tooltip">¿Sabías que? Pikachu originalmente iba a ser el segundo estado evolutivo de otro Pokémon.</div>
+    </div>
+    <div class="pokeball-decoration pokeball-2">
+        <div class="pokeball-tooltip">El diseño de las Pokébolas está inspirado en los dulces japoneses llamados "Gashapon".</div>
+    </div>
+    <div class="pokeball-decoration pokeball-3">
+        <div class="pokeball-tooltip">Raichu, la evolución de Pikachu, tiene una variante regional en Alola que puede surfear.</div>
+    </div>
+    <div class="pokeball-decoration pokeball-4">
+        <div class="pokeball-tooltip">Gengar es uno de los pocos Pokémon que requiere dos intercambios para obtener su evolución final.</div>
+    </div>
+    <div class="pokeball-decoration pokeball-5">
+        <div class="pokeball-tooltip">Charizard no es técnicamente un dragón, ya que su tipo es Fuego/Volador.</div>
+    </div>
+    <div class="pokeball-decoration pokeball-6">
+        <div class="pokeball-tooltip">El nombre "Pokémon" viene de la contracción de "Pocket Monsters" (Monstruos de Bolsillo).</div>
+    </div>
+
     <!-- Añadir más Pokémon flotantes -->
     <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" alt="" class="floating-pokemon horizontal" id="pokemon1" width="100">
     <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png" alt="" class="floating-pokemon diagonal" id="pokemon2" width="100">
@@ -21,16 +45,56 @@
     <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/130.png" alt="" class="floating-pokemon wave" id="pokemon8" width="100">
 
     <div class="container">
-        <h1>Pokémon y sus Similitudes con Animales</h1>
+        <div class="title-container">
+            <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/196.png" alt="Espeon" class="title-pokemon" id="title-poke">
+            <h1>Pokémon & Animales Similares</h1>
+        </div>
         
         <div class="pokemon-container">
             <div class="card card-pikachu" onclick="flipCard(this)">
                 <div class="card-inner">
                     <div class="card-front">
                         <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" alt="Pikachu">
-                        <div class="info-card">
-                            <h2>Pikachu</h2>
-                            <p class="card-description">Pokémon tipo eléctrico conocido por sus mejillas rojas y su capacidad para almacenar electricidad. Es muy popular como mascota.</p>
+                        <div class="pokemon-info">
+                            <div class="info-card">
+                                <h2>Pikachu</h2>
+                                <p class="card-description">Pokémon tipo eléctrico conocido por sus mejillas rojas y su capacidad para almacenar electricidad. Es muy popular como mascota.</p>
+                                
+                                <div class="stats-container">
+                                    <div class="stat-item">
+                                        <i class="fas fa-bolt" title="Velocidad"></i>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" style="width: 90%">
+                                                <span class="stat-value">90</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <i class="fas fa-fist-raised" title="Ataque"></i>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" style="width: 75%">
+                                                <span class="stat-value">75</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <i class="fas fa-shield-alt" title="Defensa"></i>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" style="width: 60%">
+                                                <span class="stat-value">60</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <i class="fas fa-magic" title="Especial"></i>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" style="width: 85%">
+                                                <span class="stat-value">85</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="card-back">
@@ -50,6 +114,41 @@
                         <div class="info-card">
                             <h2>Charizard</h2>
                             <p class="card-description">Pokémon tipo fuego/volador conocido por su feroz apariencia y su poderosa llama. Es la evolución final de Charmander.</p>
+                            
+                            <div class="stats-container">
+                                <div class="stat-item">
+                                    <i class="fas fa-bolt" title="Velocidad"></i>
+                                    <div class="stat-bar">
+                                        <div class="stat-fill" style="width: 80%">
+                                            <span class="stat-value">80</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-fist-raised" title="Ataque"></i>
+                                    <div class="stat-bar">
+                                        <div class="stat-fill" style="width: 95%">
+                                            <span class="stat-value">95</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-shield-alt" title="Defensa"></i>
+                                    <div class="stat-bar">
+                                        <div class="stat-fill" style="width: 78%">
+                                            <span class="stat-value">78</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-magic" title="Especial"></i>
+                                    <div class="stat-bar">
+                                        <div class="stat-fill" style="width: 90%">
+                                            <span class="stat-value">90</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="card-back">
@@ -70,6 +169,41 @@
                         <div class="info-card">
                             <h2>Blastoise</h2>
                             <p class="card-description">Pokémon tipo agua, conocido por los poderosos cañones de agua en su caparazón. Es la evolución final de Squirtle.</p>
+                            
+                            <div class="stats-container">
+                                <div class="stat-item">
+                                    <i class="fas fa-bolt" title="Velocidad"></i>
+                                    <div class="stat-bar">
+                                        <div class="stat-fill" style="width: 70%">
+                                            <span class="stat-value">70</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-fist-raised" title="Ataque"></i>
+                                    <div class="stat-bar">
+                                        <div class="stat-fill" style="width: 83%">
+                                            <span class="stat-value">83</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-shield-alt" title="Defensa"></i>
+                                    <div class="stat-bar">
+                                        <div class="stat-fill" style="width: 95%">
+                                            <span class="stat-value">95</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-magic" title="Especial"></i>
+                                    <div class="stat-bar">
+                                        <div class="stat-fill" style="width: 85%">
+                                            <span class="stat-value">85</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="card-back">
@@ -90,6 +224,41 @@
                         <div class="info-card">
                             <h2>Bulbasaur</h2>
                             <p class="card-description">Pokémon tipo planta/veneno que lleva una semilla en su espalda desde el día que nace. La semilla crece junto con él.</p>
+                            
+                            <div class="stats-container">
+                                <div class="stat-item">
+                                    <i class="fas fa-bolt" title="Velocidad"></i>
+                                    <div class="stat-bar">
+                                        <div class="stat-fill" style="width: 65%">
+                                            <span class="stat-value">65</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-fist-raised" title="Ataque"></i>
+                                    <div class="stat-bar">
+                                        <div class="stat-fill" style="width: 70%">
+                                            <span class="stat-value">70</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-shield-alt" title="Defensa"></i>
+                                    <div class="stat-bar">
+                                        <div class="stat-fill" style="width: 75%">
+                                            <span class="stat-value">75</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-magic" title="Especial"></i>
+                                    <div class="stat-bar">
+                                        <div class="stat-fill" style="width: 80%">
+                                            <span class="stat-value">80</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="card-back">
@@ -110,6 +279,41 @@
                         <div class="info-card">
                             <h2>Gengar</h2>
                             <p class="card-description">Pokémon tipo fantasma/veneno, conocido por su naturaleza traviesa y su habilidad para esconderse en las sombras.</p>
+                            
+                            <div class="stats-container">
+                                <div class="stat-item">
+                                    <i class="fas fa-bolt" title="Velocidad"></i>
+                                    <div class="stat-bar">
+                                        <div class="stat-fill" style="width: 88%">
+                                            <span class="stat-value">88</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-fist-raised" title="Ataque"></i>
+                                    <div class="stat-bar">
+                                        <div class="stat-fill" style="width: 75%">
+                                            <span class="stat-value">75</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-shield-alt" title="Defensa"></i>
+                                    <div class="stat-bar">
+                                        <div class="stat-fill" style="width: 65%">
+                                            <span class="stat-value">65</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-magic" title="Especial"></i>
+                                    <div class="stat-bar">
+                                        <div class="stat-fill" style="width: 92%">
+                                            <span class="stat-value">92</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="card-back">
@@ -126,4 +330,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-``` 

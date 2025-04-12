@@ -12,29 +12,119 @@ body {
     margin: 0 auto;
 }
 
+.title-container {
+    position: relative;
+    text-align: center;
+    padding: 40px 20px;
+    margin: 40px 0;
+    border: 8px solid;
+    border-image: linear-gradient(45deg, #ffd700, #ff6b6b, #4CAF50, #2196F3) 1;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    box-shadow: 
+        0 0 20px rgba(255, 215, 0, 0.3),
+        0 0 40px rgba(255, 107, 107, 0.2),
+        0 0 60px rgba(76, 175, 80, 0.2),
+        0 0 80px rgba(33, 150, 243, 0.2);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
 h1 {
     font-family: 'Righteous', cursive;
-    text-align: center;
-    color: #333;
-    font-size: 2.5em;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    font-size: 3.5em;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 2;
+    color: white;
+    margin: 0;
+    white-space: nowrap;
+    letter-spacing: 2px;
+}
+
+.title-pokemon {
+    width: 80px;
+    height: 80px;
+    filter: brightness(0.9);
+    transition: all 0.5s ease;
+}
+
+.title-pokemon:hover {
+    filter: brightness(1);
+    transform: scale(1.1) rotate(10deg);
+}
+
+#title-poke1 {
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%) rotate(-15deg);
+}
+
+#title-poke2 {
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%) rotate(15deg);
+}
+
+#title-poke3 {
+    top: 0;
+    left: 30%;
+    transform: translateY(-30%) rotate(10deg);
+}
+
+#title-poke4 {
+    bottom: 0;
+    right: 30%;
+    transform: translateY(30%) rotate(-10deg);
+}
+
+/* Añadir animación de brillo al borde */
+@keyframes borderGlow {
+    0% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
+    33% { box-shadow: 0 0 20px rgba(255, 107, 107, 0.3); }
+    66% { box-shadow: 0 0 20px rgba(76, 175, 80, 0.3); }
+    100% { box-shadow: 0 0 20px rgba(33, 150, 243, 0.3); }
+}
+
+.title-container:hover {
+    animation: borderGlow 2s infinite;
+}
+
+/* Animación para los Pokémon cuando se hace hover en el título */
+.title-container:hover .title-pokemon {
+    filter: brightness(1);
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+    100% { transform: translateY(0) rotate(0deg); }
 }
 
 .pokemon-container {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 100px;  /* Aumentado de 40px a 100px */
-    padding: 40px;  /* Aumentado de 20px a 40px */
-    max-width: 800px;
+    gap: 100px;
+    padding: 40px;
+    max-width: 1200px; /* Aumentado de 800px a 1200px */
     margin: 0 auto;
 }
 
 .card {
     perspective: 1000px;
-    height: 500px;  /* Aumentado de 450px a 500px */
+    height: 400px; /* Reducido para mejor proporción horizontal */
     cursor: pointer;
     width: 100%;
-    margin-bottom: 50px;  /* Añadido margen inferior */
+    margin-bottom: 50px;
 }
 
 /* Asegurar que la última tarjeta tenga espacio al final */
@@ -60,12 +150,18 @@ h1 {
     height: 100%;
     backface-visibility: hidden;
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* Cambiado de column a row */
     align-items: center;
-    justify-content: center;
-    background-color: #f8f8f8;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    justify-content: space-between;
+    padding: 20px 40px;
+    border-radius: 15px;
+}
+
+.card-front .pokemon-info,
+.card-back .animal-info {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
     padding: 20px;
 }
 
@@ -73,9 +169,10 @@ h1 {
     transform: rotateY(180deg);
 }
 
-img {
-    max-width: 60%;
+.card img {
+    max-width: 40%; /* Reducido para dejar espacio al contenido */
     height: auto;
+    object-fit: contain;
     margin-bottom: 15px;
 }
 
@@ -100,10 +197,84 @@ h2 {
 .info-card {
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 8px;
-    padding: 15px;
+    padding: 20px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    width: 90%;
+    width: 100%;
     margin-top: 10px;
+}
+
+/* Nuevo: Contenedor para stats */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.stat-item i {
+    font-size: 1.2em;
+    width: 25px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.stat-bar {
+    flex-grow: 1;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+.stat-fill {
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 6px;
+    transition: width 0.5s ease;
+    position: relative;
+}
+
+.stat-value {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8em;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+
+/* Estilos comunes para las estadísticas */
+.stat-item:nth-child(1) .stat-fill { /* Velocidad */
+    background: linear-gradient(to right, #FFE93E, #FFD700);
+}
+
+.stat-item:nth-child(2) .stat-fill { /* Ataque */
+    background: linear-gradient(to right, #FF4444, #CC0000);
+}
+
+.stat-item:nth-child(3) .stat-fill { /* Defensa */
+    background: linear-gradient(to right, #44BBFF, #0066CC);
+}
+
+.stat-item:nth-child(4) .stat-fill { /* Especial */
+    background: linear-gradient(to right, #AA44FF, #6600CC);
 }
 
 /* Estilos específicos para Pikachu */
@@ -247,4 +418,121 @@ h2 {
     50% { transform: translateX(50vw) translateY(-50px); }
     75% { transform: translateX(75vw) translateY(50px); }
     100% { transform: translateX(calc(100vw + 100px)) translateY(0); }
+}
+
+/* Añadir después de los estilos existentes */
+
+.page-border {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.border-left, .border-right {
+    width: 60px;
+    height: 100%;
+    top: 0;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.1) 0px,
+        rgba(255, 255, 255, 0.1) 50px,
+        transparent 50px,
+        transparent 100px
+    );
+}
+
+.border-left {
+    left: 0;
+    border-right: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+.border-right {
+    right: 0;
+    border-left: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+.pokeball-decoration {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(145deg, #ff1a1a 50%, #f0f0f0 50%);
+    border-radius: 50%;
+    border: 3px solid #333;
+    cursor: pointer;
+    z-index: 1001;
+    animation: glow 2s infinite;
+}
+
+.pokeball-decoration::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-radius: 50%;
+    border: 2px solid #333;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Posiciones de las Pokébolas */
+.pokeball-1 { top: 20px; left: 20px; }
+.pokeball-2 { top: 20px; right: 20px; }
+.pokeball-3 { top: 50%; left: 20px; transform: translateY(-50%); }
+.pokeball-4 { top: 50%; right: 20px; transform: translateY(-50%); }
+.pokeball-5 { bottom: 20px; left: 20px; }
+.pokeball-6 { bottom: 20px; right: 20px; }
+
+/* Estilos para los tooltips */
+.pokeball-tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    width: 200px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Posiciones específicas para cada tooltip */
+.pokeball-1 .pokeball-tooltip { left: 50px; top: 0; }
+.pokeball-2 .pokeball-tooltip { right: 50px; top: 0; }
+.pokeball-3 .pokeball-tooltip { left: 50px; top: 50%; transform: translateY(-50%); }
+.pokeball-4 .pokeball-tooltip { right: 50px; top: 50%; transform: translateY(-50%); }
+.pokeball-5 .pokeball-tooltip { left: 50px; bottom: 0; }
+.pokeball-6 .pokeball-tooltip { right: 50px; bottom: 0; }
+
+/* Animación al hacer hover */
+.pokeball-decoration:hover .pokeball-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.pokeball-decoration:hover {
+    transform: scale(1.1);
+}
+
+/* Animación de brillo */
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(255, 26, 26, 0.5); }
+    50% { box-shadow: 0 0 15px rgba(255, 26, 26, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(255, 26, 26, 0.5); }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+    
+    .title-pokemon {
+        width: 60px;
+        height: 60px;
+    }
 }
